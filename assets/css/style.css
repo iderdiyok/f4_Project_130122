@@ -10,7 +10,9 @@ font-family: 'Open Sans', sans-serif; */
 }
 
 /* GLOBAL */
-
+html {
+    scroll-behavior: smooth;
+}
 h1, h2, h3, h4, h5, p, li, a{
     color: #222;
 }
@@ -20,20 +22,20 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 h2{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 h3{
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 p, li, a{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 a{
@@ -56,20 +58,20 @@ header{
 }
 
 header img{
-    /* height: 100%; */
+    padding: 1em;
+    height: 100%;
 }
 
 header li{
     display: inline-block;
     margin-left: 2%;
-    font-weight: 100;
 }
 
 header nav ul{
     width: 50%;
     text-align: right;
     position: absolute;
-    bottom: 0%;
+    bottom: 10%;
     right: 5%; 
 }
 
@@ -79,46 +81,57 @@ header nav ul{
 
 section:first-of-type{
     height: 85vh;
-    border-bottom: 1px solid;
 }
 
 h1{
-    width: 70%;
-    margin: 7% 15% 1% 15%;
+    margin: 0 0 1em 3.2em;
+    padding-top: 1em;
+    color: #fff;
 }
 
 .home h2{
-    width: 70%;
-    margin: 0% 15% 3% 15%;
+    margin: 0 0 1em 3.8em;
+    color:#fff;
 }
 
 .home {
-    width: 70%;
-    margin: 0% 15% 0 15%;
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.5)), url(../img/bgHome.jpeg) no-repeat center/cover;
+    background-attachment: fixed;
+
 }
 
+.home article{
+    margin-left: 9.4em;
+}
 .home h3{
-    margin-bottom: 2%;
+    margin-bottom: 1em;
+    color: #fff;
 }
-
 article ul li{
-    width: 50%;
-    margin-bottom: 1%;
-    background-color: rgba(0,0,0,0.25);
-    border-radius: 0 25px 25px 0;  
-    padding: 1%; 
+    margin-bottom: 2em;
+    
 }
-
+.home li a{
+    background-color: rgba(95, 94, 94, 0.25);
+    border-radius: 0 25px 25px 0;  
+    padding: .5em 5em .5em .2em; 
+    color: #fff;
+}
+.home li a:hover{
+    background-color: #fcbd4a;
+}
+main section:not(:first-child) h2{
+    text-align: right;
+    margin: .7em .9em 0 0;
+}
 /* SERVICES */
 
 #services{
-    height: 300vh;
-    border-bottom: 1px solid red;
+    height: 210vh;
 }
 
 #services article{
-    margin-bottom: 10em;
-    border: 1px solid;
+    margin-bottom: 3em;
     position: relative;
 }
 
@@ -126,42 +139,82 @@ article ul li{
     text-align: right;
 }
 
-#services article:not(:last-of-type) p{
-    width: 40%;
-    border: 1px solid green;
+#services article p{
+    width: 50%;
     display: inline-block;
     position: absolute;
     top: 5%; 
 }
 
 #services article:nth-of-type(even) p{
-    right: 32%;
+    right: 28%;
 }
 
-#services article:not(:last-of-type):nth-of-type(odd) p{
-    left: 32%;
+#services article:nth-of-type(odd) p{
+    left: 28%;
 }
 
-div{
-    text-align: center;
-}
-
-#services h3{
-    width: 30%;
-    background-color: #ff5c5c;
+#services article div{
+    width: 20em;
+    height: 12em;
     display: inline-block;
+    position: relative;
 }
-
-#services article:nth-of-type(odd) h3{
-    padding: 8% 5% 8% 2.5%;
+#services article:nth-of-type(1) div{
+    background: url(../img/SteuerberatungUndBuchhaltung.jpg) no-repeat center/cover;
+}
+#services article:nth-of-type(2) div{
+    background: url(../img/container.jpg) no-repeat center/cover;
+}
+#services article:nth-of-type(3) div{
+    background: url(../img/ScheidungUndSteuer.jpeg) no-repeat center/cover;
+}
+#services article:nth-of-type(4) div{
+    background: url(../img/beratung.jpeg) no-repeat center/cover;
+}
+#services article:nth-of-type(5) div{
+    background: url(../img/Revisionsverfahren.jpg) no-repeat center/cover;
+}
+#services article div h3{
+    width: 70%;
+    color: #fff;
+    text-shadow: 2px 2px #222;
+}
+#services article:nth-of-type(odd) div{
     border-radius: 0 50px 50px 0;
 }
-
-#services article:nth-of-type(even) h3{
-    padding: 8% 2.5% 8% 5%;
+#services article:nth-of-type(odd) div h3{
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translate(50%, -50%);
+}
+#services article:nth-of-type(even) div{
     border-radius: 50px 0 0 50px;
 }
-
+#services article:nth-of-type(even) div h3{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+#services > div{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+#services > div > p{
+    margin-bottom: 2em;
+}
+#services > div > a{
+    padding: .7em 2em;
+    color: #fff;
+    background-color: #fcbd4a;
+    border-radius: 10px;
+}
+#services > div > a:hover{
+    background-color: #222;
+}
 #about{
     height: 120vh;
 }
@@ -176,13 +229,38 @@ div{
     margin: 0 auto;
     text-align: center;
 }
-
+#about article h4{
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
 #about img{
     width: 100%;
     height: 30%;
     margin: 3em 0;
 }
-
+/* contact */
 #contact{
-    height: 130vh;
+    height: 100vh;
+    background-color: #fcbd4a;
+}
+#contact article, h5, form{
+    margin: 3em 0 0 8em;
+}
+#contact article p{
+    margin-bottom: .5em;
+}
+#contact h5{
+    font-size: 1.2em;
+    margin: 1em 6.5em;
+}
+#contact form input, textarea {
+    display: block;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: #c4c4c4;
+}
+footer{
+    text-align: center;
+    margin: 0 auto;
 }
